@@ -14,6 +14,22 @@ fi
 CONFIG=riscv
 CONFIGFILE=${CONFIG}.cfg
 
+#filename='riscv.cfg'
+#n=1
+#while read line; do
+# reading each line
+#	n=0
+#	for word in ${line[@]}; do
+#		echo "$word"
+#		n=$((n+1))
+#		if [[ "${word}" == "%define" || "${word}" == "define" && "${word+1}" == "label" ]]; then
+#			echo "${line[$n]}"
+#		fi
+		
+#	done
+#n=$((n+1))
+#done < $filename
+
 # The config used to compile for the host machine
 H_CONFIG=host
 H_CONFIGFILE=${H_CONFIG}.cfg
@@ -167,7 +183,8 @@ if [ "$compileFlag" = true ]; then
       chmod +x $run_script
    done
    # Copy the master runscript into the overlay directory
-   cp ${build_dir}/../spec17-run-scripts/${suite_type}.sh ${overlay_dir}/${suite_type}/${input_type}
+   cp ${build_dir}/../spec17-run-scripts/${suite_type}_${input_type}.sh ${overlay_dir}/${suite_type}/${input_type}
+   cp ${build_dir}/../spec17-run-scripts/run_all_${suite_type}_${input_type}.sh ${overlay_dir}/${suite_type}/${input_type}
 
 fi
 

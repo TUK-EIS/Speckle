@@ -81,7 +81,7 @@ fi
 # interpreted correctly, we have to put the CSV header in manually
 echo "name,RealTime,UserTime,KernelTime" >> ~/output/${full_name}.csv
 /usr/bin/time -a -o ~/output/${full_name}.csv -f "${full_name},%e,%U,%S" \
-    ./${runscript} > ~/output/${full_name}.out 1> ~/output/${full_name}.err
+    sh /media/SDCard/overlay/intspeed/ref/${runscript} > ~/output/${full_name}.out 1> ~/output/${full_name}.err
 
 if [ -z "$DISABLE_COUNTERS" -a "$counters" -ne 0 ]; then
     stop_counters
