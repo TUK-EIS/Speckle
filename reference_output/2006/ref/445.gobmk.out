@@ -1,0 +1,2165 @@
+Running: ./gobmk_base.riscv --quiet --mode gtp < 13x13.tst
+= white
+
+=1 J2
+
+= white
+
+=2 E10
+
+= white
+
+=3 E5
+
+= white
+
+=4 M4
+
+= white
+
+=5 N9
+
+= white
+
+=6 M8
+
+= white
+
+=7 M1
+
+= white
+
+=8 H8
+
+= white
+
+=9 B6
+
+= white
+
+=10 E3
+
+= white
+
+=11 G6
+
+= white
+
+=12 G7
+
+= white
+
+=13 G7
+
+= white
+
+=14 E8
+
+= white
+
+=15 C7
+
+= white
+
+=16 C6
+
+= white
+
+=17 L5
+
+= white
+
+=18 0
+
+= white
+
+=19 C10
+
+= white
+
+=20 M8
+
+= white
+
+=21 N8
+
+= white
+
+=22 C9
+
+= white
+
+=23 E12
+
+= white
+
+=24 H6
+
+= white
+
+=25 J5
+
+= white
+
+=26 J5
+
+= white
+
+=27 E3
+
+= white
+
+=28 E3
+
+= white
+
+=29 C8
+
+= white
+
+=30 B7
+
+= white
+
+=31 M4
+
+= white
+
+=33 E7
+
+= white
+
+=34 K13
+
+= white
+
+=35 B13
+
+= white
+
+=36 B2
+
+= white
+
+=37 E10
+
+= white
+
+=38 G10
+
+= white
+
+=39 H4
+
+= white
+
+=40 L11
+
+= white
+
+=41 H10
+
+= white
+
+=42 C7
+
+= black
+
+=43 D6
+
+= black
+
+=44 B6
+
+= black
+
+=45 B4
+
+= black
+
+=46 L3
+
+= black
+
+=47 K9
+
+= black
+
+=48 K7
+
+= black
+
+=49 K7
+
+= black
+
+=149 H12
+
+= black
+
+=50 H12
+
+= black
+
+=51 N9
+
+= black
+
+=52 H10
+
+= black
+
+=53 C6
+
+= black
+
+=54 H11
+
+= black
+
+=55 H6
+
+= black
+
+=56 H4
+
+= black
+
+=57 N7
+
+= black
+
+=58 0
+
+= black
+
+=59 K5
+
+= black
+
+=60 G3
+
+= black
+
+=61 K8
+
+= black
+
+=62 C12
+
+= black
+
+=63 K4
+
+= black
+
+=64 M3
+
+= black
+
+=65 L2
+
+= black
+
+=66 M5
+
+= black
+
+=67 B9
+
+= black
+
+=68 A8
+
+= black
+
+=69 D5
+
+= black
+
+=70 L10
+
+= black
+
+=71 J11
+
+= black
+
+=72 J10
+
+= black
+
+=73 H4
+
+= black
+
+=74 G7
+
+= black
+
+=75 E6
+
+= black
+
+=76 J3
+
+= black
+
+=77 C8
+
+= black
+
+=78 L4
+
+= black
+
+=79 M5
+
+= black
+
+=80 M2
+
+= black
+
+=81 M8
+
+= black
+
+=82 K4
+
+= black
+
+=83 L12
+
+= black
+
+=84 H13
+
+= black
+
+=85 D2
+
+= black
+
+=86 1 H5
+
+= black
+
+=87 F6
+
+= black
+
+=88 D6
+
+= black
+
+=89 0
+
+= black
+
+=90 A5
+
+= black
+
+=91 F5
+
+Running: ./gobmk_base.riscv --quiet --mode gtp < nngs.tst
+= black
+
+=100 K2
+
+= black
+
+=110 L2
+
+= black
+
+=120 R5
+
+= black
+
+=130 M2
+
+= black
+
+=140 O2
+
+= black
+
+=150 O11
+
+= black
+
+=170 N10
+
+= black
+
+=180 K9
+
+= black
+
+=190 M13
+
+= black
+
+=200 O14
+
+= black
+
+=210 P11
+
+= black
+
+=220 H14
+
+= black
+
+=230 K16
+
+= black
+
+=240 T6
+
+= black
+
+=250 S10
+
+= black
+
+=260 M17
+
+= black
+
+=270 M7
+
+= black
+
+=280 M7
+
+= black
+
+=290 D12
+
+= black
+
+=300 C13
+
+= black
+
+=310 B9
+
+= black
+
+=320 D17
+
+= black
+
+=330 D15
+
+= black
+
+=340 Q7
+
+= black
+
+=370 Q1
+
+= black
+
+=371 1 Q1
+
+= black
+
+=380 M3
+
+= black
+
+=390 N17
+
+= black
+
+=400 L12
+
+= black
+
+=410 J9
+
+= black
+
+=420 E4
+
+= black
+
+=430 C16
+
+= black
+
+=440 O2
+
+= black
+
+=480 G14
+
+= black
+
+=490 J18
+
+= black
+
+=500 J17
+
+= black
+
+=510 H14
+
+= black
+
+=530 M4
+
+= black
+
+=540 K11
+
+= black
+
+=550 P14
+
+= black
+
+=560 E11
+
+= black
+
+=570 G1
+
+= black
+
+=590 G4
+
+= black
+
+=600 H6
+
+= black
+
+=610 J8
+
+= white
+
+=620 P16
+
+= white
+
+=630 D6
+
+= white
+
+=640 D6
+
+= white
+
+=660 F4
+
+= white
+
+=680 P13
+
+= white
+
+=690 N13
+
+= white
+
+=700 K17
+
+= white
+
+=710 B12
+
+= white
+
+=720 A11
+
+= white
+
+=770 G9
+
+= white
+
+=800 O15
+
+= white
+
+=810 O15
+
+= white
+
+=820 L9
+
+= white
+
+=850 H15
+
+= white
+
+=860 N6
+
+= white
+
+=870 D19
+
+= white
+
+=875 PASS
+
+= white
+
+=880 H6
+
+= white
+
+=890 D1
+
+= white
+
+=900 Q15
+
+= white
+
+=910 T17
+
+= white
+
+=920 R5
+
+= white
+
+=930 O3
+
+= white
+
+=940 O3
+
+= white
+
+=950 F1
+
+= white
+
+=960 R16
+
+= white
+
+=970 L3
+
+= white
+
+=980 L3
+
+= white
+
+=990 L3
+
+= white
+
+=1000 K6
+
+= white
+
+=1010 Q16
+
+= white
+
+=1020 P2
+
+= white
+
+=1030 L18
+
+= white
+
+=1040 L17
+
+= white
+
+=1050 H11
+
+= white
+
+=1060 Q2
+
+= white
+
+=1070 Q2
+
+= white
+
+=1080 Q2
+
+= white
+
+=1090 J12
+
+= white
+
+=1100 F2
+
+= white
+
+=1110 J16
+
+= white
+
+=1120 D6
+
+= white
+
+=1130 C8
+
+= white
+
+=1140 1 A11
+
+= white
+
+=1150 H9
+
+= white
+
+=1160 A8
+
+= white
+
+=1170 K8
+
+= white
+
+=1180 L8
+
+= white
+
+=1190 1 PASS
+
+= white
+
+=1200 D13
+
+= white
+
+=1210 G3
+
+= white
+
+=1220 N16
+
+= white
+
+=1230 Q14
+
+= white
+
+=1240 J15
+
+= white
+
+=1250 K14
+
+= white
+
+=1260 B14
+
+= white
+
+=1270 B14
+
+= white
+
+=1280 J12
+
+= white
+
+=1300 T4
+
+= white
+
+=1310 Q15
+
+= white
+
+=1320 R6
+
+= black
+
+=1420 D12
+
+= black
+
+=1430 D12
+
+= black
+
+=1440 H10
+
+= white
+
+=1450 M8
+
+= white
+
+=1480 B1
+
+= white
+
+=1500 R16
+
+= white
+
+=1510 M16
+
+= white
+
+=1520 F14
+
+= white
+
+=1540 L9
+
+= white
+
+=1550 M8
+
+= white
+
+=1560 M8
+
+= white
+
+=1570 O13
+
+= black
+
+=1580 R14
+
+= black
+
+=1590 R14
+
+= black
+
+=1600 R14
+
+= black
+
+=1620 D2
+
+= black
+
+=1630 M1
+
+= black
+
+=1640 D1
+
+= black
+
+=1660 P14
+
+= black
+
+=1670 A15
+
+= black
+
+=1680 B8
+
+= black
+
+=1690 D8
+
+= black
+
+=1700 G12
+
+= black
+
+=1740 O2
+
+= black
+
+=1750 J9
+
+= black
+
+=1760 N7
+
+= black
+
+=1770 P1
+
+= black
+
+=1780 N1
+
+= black
+
+=1790 Q14
+
+= black
+
+=1800 Q14
+
+= black
+
+=1810 Q14
+
+= black
+
+=1830 J13
+
+= black
+
+=1840 K7
+
+= black
+
+=1860 L17
+
+= black
+
+=1870 L8
+
+= black
+
+=1880 L8
+
+= black
+
+=1890 H16
+
+= black
+
+=1900 F19
+
+= black
+
+=1910 E18
+
+= black
+
+=1920 J4
+
+= white
+
+=1930 P14
+
+= white
+
+=1940 P14
+
+= white
+
+=1950 K16
+
+= white
+
+=1955 D3
+
+= white
+
+=1960 R9
+
+= white
+
+=1970 F15
+
+= white
+
+=1980 F15
+
+= white
+
+=2000 H14
+
+= white
+
+=2010 H14
+
+= white
+
+=2020 H14
+
+= black
+
+=2030 G6
+
+= black
+
+=2040 E5
+
+= black
+
+=2050 D1
+
+= black
+
+=2060 C4
+
+=10002 0
+
+Running: ./gobmk_base.riscv --quiet --mode gtp < score2.tst
+= black
+
+=31 B+90.5
+
+= black
+
+=32 B+75.5
+
+= black
+
+=33 B+33.5
+
+= black
+
+=34 B+122.5
+
+= black
+
+=35 B+94.5
+
+= black
+
+=36 B+48.5
+
+= black
+
+=37 B+3.5
+
+= black
+
+=38 B+7.5
+
+= black
+
+=39 B+44.5
+
+= black
+
+=40 B+83.5
+
+= black
+
+=41 B+37.5
+
+= black
+
+=42 B+145.5
+
+= black
+
+=43 B+28.5
+
+= black
+
+=44 B+76.5
+
+= black
+
+=45 W+34.5
+
+= white
+
+=46 W+40.5
+
+= black
+
+=47 B+64.5
+
+= black
+
+=48 B+61.5
+
+= black
+
+=49 B+27.5
+
+= black
+
+=50 B+13.5
+
+= black
+
+=51 B+75.5
+
+= black
+
+=52 B+46.5
+
+= black
+
+=53 B+95.5
+
+= black
+
+=54 B+187.5
+
+= black
+
+=55 B+145.5
+
+= black
+
+=56 B+16.5
+
+= black
+
+=57 B+119.5
+
+= black
+
+=58 B+102.5
+
+Running: ./gobmk_base.riscv --quiet --mode gtp < trevorc.tst
+= white
+
+=100 H8
+
+= white
+
+=110 H8
+
+= white
+
+=130 H9
+
+= white
+
+=140 PASS
+
+= white
+
+=150 E3
+
+= white
+
+=160 K7
+
+= white
+
+=170 H5
+
+= white
+
+=180 K1
+
+= white
+
+=190 A6
+
+= white
+
+=200 A7
+
+= white
+
+=210 G12
+
+= white
+
+=220 D12
+
+= white
+
+=230 K3
+
+= white
+
+=240 K3
+
+= white
+
+=250 B7
+
+= white
+
+=260 B5
+
+= white
+
+=270 K1
+
+= white
+
+=280 C7
+
+= white
+
+=290 K13
+
+= white
+
+=300 K13
+
+= white
+
+=310 H12
+
+= white
+
+=320 D7
+
+= white
+
+=330 C4
+
+= white
+
+=340 M4
+
+= white
+
+=350 E3
+
+= white
+
+=360 H11
+
+= white
+
+=370 F13
+
+= white
+
+=380 F13
+
+= white
+
+=390 K6
+
+= white
+
+=400 H11
+
+= white
+
+=410 H2
+
+= white
+
+=420 F10
+
+= white
+
+=430 A4
+
+= white
+
+=440 N5
+
+= white
+
+=450 E6
+
+= white
+
+=460 K11
+
+= white
+
+=470 K11
+
+= white
+
+=480 D6
+
+= white
+
+=490 A7
+
+= white
+
+=500 E7
+
+= white
+
+=510 M7
+
+= white
+
+=520 G6
+
+= white
+
+=530 K4
+
+= white
+
+=540 J9
+
+= white
+
+=550 E3
+
+= white
+
+=560 E12
+
+= white
+
+=570 L10
+
+= white
+
+=580 J4
+
+= white
+
+=590 E8
+
+= white
+
+=600 E11
+
+= white
+
+=610 D4
+
+= white
+
+=620 J4
+
+= white
+
+=630 G2
+
+= white
+
+=640 G10
+
+= white
+
+=650 K7
+
+= white
+
+=660 M4
+
+= white
+
+=670 G1
+
+= white
+
+=680 G13
+
+= white
+
+=690 G8
+
+= white
+
+=700 F8
+
+= white
+
+=710 D5
+
+= white
+
+=720 G6
+
+= white
+
+=730 E5
+
+= black
+
+=740 H3
+
+= white
+
+=750 J12
+
+= white
+
+=760 H11
+
+= white
+
+=770 H10
+
+= white
+
+=780 H3
+
+= white
+
+=790 L8
+
+= white
+
+=800 F9
+
+= white
+
+=810 D7
+
+= white
+
+=820 A6
+
+= white
+
+=830 J10
+
+= white
+
+=840 F12
+
+= white
+
+=850 D12
+
+= white
+
+=860 E3
+
+= white
+
+=870 F5
+
+= white
+
+=880 J10
+
+= white
+
+=890 J10
+
+= white
+
+=900 D2
+
+= white
+
+=910 H13
+
+= white
+
+=920 K10
+
+= white
+
+=930 K10
+
+= white
+
+=940 G1
+
+= white
+
+=950 F13
+
+= white
+
+=960 F4
+
+= white
+
+=970 C13
+
+= white
+
+=980 H2
+
+= white
+
+=990 A8
+
+= white
+
+=1000 F11
+
+= white
+
+=1010 K1
+
+= white
+
+=1020 G3
+
+= white
+
+=1030 G3
+
+= white
+
+=1040 A8
+
+= white
+
+=1050 C4
+
+= white
+
+=1060 D13
+
+= white
+
+=1070 K10
+
+= white
+
+=1080 K2
+
+= white
+
+=1090 G12
+
+= white
+
+=1100 F11
+
+= white
+
+=1110 J4
+
+= white
+
+=1120 N10
+
+= white
+
+=1130 N8
+
+= white
+
+=1140 PASS
+
+= white
+
+=1150 M7
+
+= white
+
+=1160 K7
+
+= white
+
+=1170 C6
+
+= white
+
+=1180 K11
+
+= white
+
+=1190 F9
+
+= white
+
+=1200 J5
+
+= white
+
+=1210 E5
+
+= white
+
+=1220 M7
+
+= white
+
+=1240 C2
+
+= white
+
+=1250 C3
+
+= white
+
+=1260 B7
+
+= white
+
+=1270 A7
+
+= white
+
+=1280 A7
+
+= white
+
+=1290 F2
+
+= white
+
+=1300 F2
+
+= white
+
+=1310 F2
+
+= white
+
+=1320 E13
+
+= white
+
+=1340 B6
+
+= white
+
+=1350 K6
+
+= white
+
+=1360 F12
+
+= white
+
+=1370 C9
+
+= white
+
+=1380 H8
+
+= white
+
+=1390 K9
+
+= white
+
+=1400 K10
+
+= white
+
+=1410 H2
+
+= white
+
+=1420 J4
+
+= white
+
+=1430 G12
+
+= white
+
+=1440 E3
+
+= white
+
+=1450 G2
+
+= white
+
+=1460 PASS
+
+= white
+
+=1470 L10
+
+= white
+
+=1480 F6
+
+= white
+
+=1490 J10
+
+= white
+
+=1500 A8
+
+= white
+
+=1510 L5
+
+= white
+
+=1520 C12
+
+= white
+
+=1530 A9
+
+= white
+
+=1540 M10
+
+= white
+
+=1550 L11
+
+= white
+
+=1560 H7
+
+= white
+
+=1570 E2
+
+= white
+
+=1580 C8
+
+= white
+
+=1590 F1
+
+= white
+
+=1600 F6
+
+= white
+
+=1610 B3
+
+= white
+
+=1620 G9
+
+= black
+
+=1621 0
+
+= white
+
+=1630 L10
+
+= white
+
+=1640 M7
+
+= white
+
+=1650 M7
+
+= white
+
+=1660 K11
+
+= white
+
+=1670 K6
+
+= white
+
+=1680 K13
+
+Running: ./gobmk_base.riscv --quiet --mode gtp < trevord.tst
+= white
+
+=100 C7
+
+= white
+
+=110 K17
+
+= white
+
+=120 B9
+
+= white
+
+=130 O10
+
+= white
+
+=140 F11
+
+= white
+
+=150 E9
+
+= white
+
+=160 K2
+
+= white
+
+=170 P7
+
+= white
+
+=180 S9
+
+= white
+
+=190 T10
+
+= white
+
+=200 N11
+
+= white
+
+=210 L11
+
+= white
+
+=220 L9
+
+= white
+
+=230 L9
+
+= white
+
+=240 L8
+
+= white
+
+=250 N9
+
+= white
+
+=260 Q2
+
+= white
+
+= 
+
+=261 1 P3
+
+= white
+
+=270 K11
+
+= white
+
+=280 E13
+
+= white
+
+=290 Q8
+
+= white
+
+=300 Q13
+
+= white
+
+=310 Q13
+
+= white
+
+=320 C5
+
+= white
+
+=330 D16
+
+= white
+
+=340 F8
+
+= white
+
+=350 L18
+
+= white
+
+=360 K3
+
+= white
+
+=370 L8
+
+= white
+
+=380 L8
+
+= white
+
+=390 B18
+
+= white
+
+=400 B18
+
+= white
+
+=410 S7
+
+= white
+
+=420 S9
+
+= white
+
+=430 G5
+
+= white
+
+=440 F10
+
+= white
+
+=450 E13
+
+= white
+
+=460 F19
+
+= white
+
+=470 J18
+
+= white
+
+=480 N3
+
+= white
+
+=490 D5
+
+= white
+
+=500 L7
+
+= white
+
+=510 K7
+
+= white
+
+=520 D15
+
+= white
+
+=530 C3
+
+= white
+
+=540 K12
+
+= white
+
+=550 K10
+
+= white
+
+=560 M16
+
+= white
+
+=570 K9
+
+= white
+
+=580 J10
+
+= white
+
+=590 M14
+
+= white
+
+=600 N11
+
+= white
+
+=610 D2
+
+= white
+
+=620 M11
+
+= white
+
+=630 E2
+
+= white
+
+=640 H2
+
+= white
+
+=650 B17
+
+= white
+
+=660 D15
+
+= white
+
+=670 O11
+
+= white
+
+=680 S16
+
+= black
+
+=690 P19
+
+= white
+
+=700 S16
+
+= white
+
+=710 E18
+
+= white
+
+=720 Q8
+
+= white
+
+=730 H3
+
+= white
+
+=740 B15
+
+= white
+
+=750 Q10
+
+= white
+
+=760 H6
+
+= white
+
+=780 B18
+
+= white
+
+=790 P14
+
+= white
+
+=800 T12
+
+= white
+
+=810 G15
+
+= white
+
+=820 O14
+
+= white
+
+=830 K16
+
+= white
+
+=840 A5
+
+= white
+
+=850 N5
+
+= white
+
+=860 Q5
+
+= white
+
+=870 R6
+
+= white
+
+=880 D6
+
+= white
+
+=890 R7
+
+= white
+
+=900 R7
+
+= white
+
+=910 L16
+
+= white
+
+=920 G18
+
+= white
+
+=930 H2
+
+= white
+
+=940 H2
+
+= white
+
+=950 H2
+
+= white
+
+=960 J6
+
+= white
+
+=970 J9
+
+= white
+
+=980 M13
+
+= white
+
+=990 B11
+
+= white
+
+=1000 B11
+
+= white
+
+=1010 R15
+
+= white
+
+=1020 K11
+
+= white
+
+=1030 R15
+
+= white
+
+=1040 T6
+
+= white
+
+=1050 O13
+
+= white
+
+=1060 J3
+
+= white
+
+=1070 Q12
+
+= white
+
+=1080 C5
+
+= white
+
+=1090 L7
+
+= white
+
+=1100 N5
+
+= white
+
+=1110 P17
+
+= white
+
+=1120 Q8
+

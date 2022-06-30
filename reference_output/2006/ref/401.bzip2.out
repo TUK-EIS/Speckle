@@ -1,0 +1,156 @@
+Running: ./bzip2_base.riscv input.source 280
+spec_init
+Loading Input Data
+Duplicating 51763200 bytes
+Duplicating 103526400 bytes
+Duplicating 86548480 bytes
+Input data 293601280 bytes in length
+Compressing Input Data, level 5
+Compressed data 54403299 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 7
+Compressed data 53599136 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 9
+Compressed data 52960821 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Tested 280MB buffer: OK!
+Running: ./bzip2_base.riscv chicken.jpg 30
+spec_init
+Loading Input Data
+Duplicating 652307 bytes
+Duplicating 1304614 bytes
+Duplicating 2609228 bytes
+Duplicating 5218456 bytes
+Duplicating 10436912 bytes
+Duplicating 10583456 bytes
+Input data 31457280 bytes in length
+Compressing Input Data, level 5
+Compressed data 31306985 bytes in length
+Uncompressing Data
+Uncompressed data 31457280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 7
+Compressed data 30427899 bytes in length
+Uncompressing Data
+Uncompressed data 31457280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 9
+Compressed data 25949409 bytes in length
+Uncompressing Data
+Uncompressed data 31457280 bytes in length
+Uncompressed data compared correctly
+Tested 30MB buffer: OK!
+Running: ./bzip2_base.riscv liberty.jpg 30
+spec_init
+Loading Input Data
+Duplicating 289631 bytes
+Duplicating 579262 bytes
+Duplicating 1158524 bytes
+Duplicating 2317048 bytes
+Duplicating 4634096 bytes
+Duplicating 9268192 bytes
+Duplicating 12920896 bytes
+Input data 31457280 bytes in length
+Compressing Input Data, level 5
+Compressed data 21917976 bytes in length
+Uncompressing Data
+Uncompressed data 31457280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 7
+Compressed data 17697398 bytes in length
+Uncompressing Data
+Uncompressed data 31457280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 9
+Compressed data 13755071 bytes in length
+Uncompressing Data
+Uncompressed data 31457280 bytes in length
+Uncompressed data compared correctly
+Tested 30MB buffer: OK!
+Running: ./bzip2_base.riscv input.program 280
+spec_init
+Loading Input Data
+Duplicating 8070616 bytes
+Duplicating 16141232 bytes
+Duplicating 32282464 bytes
+Duplicating 64564928 bytes
+Duplicating 129129856 bytes
+Duplicating 35341568 bytes
+Input data 293601280 bytes in length
+Compressing Input Data, level 5
+Compressed data 100396862 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 7
+Compressed data 101953195 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 9
+Compressed data 103010861 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Tested 280MB buffer: OK!
+Running: ./bzip2_base.riscv text.html 280
+spec_init
+Loading Input Data
+Duplicating 132492 bytes
+Duplicating 264984 bytes
+Duplicating 529968 bytes
+Duplicating 1059936 bytes
+Duplicating 2119872 bytes
+Duplicating 4239744 bytes
+Duplicating 8479488 bytes
+Duplicating 16958976 bytes
+Duplicating 33917952 bytes
+Duplicating 67835904 bytes
+Duplicating 135671808 bytes
+Duplicating 22257664 bytes
+Input data 293601280 bytes in length
+Compressing Input Data, level 5
+Compressed data 22290700 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 7
+Compressed data 17811990 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 9
+Compressed data 14427351 bytes in length
+Uncompressing Data
+Uncompressed data 293601280 bytes in length
+Uncompressed data compared correctly
+Tested 280MB buffer: OK!
+Running: ./bzip2_base.riscv input.combined 200
+spec_init
+Loading Input Data
+Duplicating 53779568 bytes
+Duplicating 102156064 bytes
+Input data 209715200 bytes in length
+Compressing Input Data, level 5
+Compressed data 44861975 bytes in length
+Uncompressing Data
+Uncompressed data 209715200 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 7
+Compressed data 43924309 bytes in length
+Uncompressing Data
+Uncompressed data 209715200 bytes in length
+Uncompressed data compared correctly
+Compressing Input Data, level 9
+Compressed data 43210534 bytes in length
+Uncompressing Data
+Uncompressed data 209715200 bytes in length
+Uncompressed data compared correctly
+Tested 200MB buffer: OK!
