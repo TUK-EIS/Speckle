@@ -1,4 +1,3 @@
-Running: ./gcc_base.riscv cccp.in -o cccp.s
 	.file	"cccp.in"
 	.data
 	.align 4
