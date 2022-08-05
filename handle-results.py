@@ -198,6 +198,7 @@ def handle2006AllTest(outDir, dataset):
     
     os.remove(".tmp.csv") 
     resDF = pd.concat([resDF, geo_m, arith_m])
+    resDF.sort_index(inplace=True)
     return resDF
 
 if __name__ == "__main__":

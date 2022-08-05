@@ -53,7 +53,14 @@ done
 
 work_dir=$PWD
 export OMP_NUM_THREADS=$num_threads
-mkdir -p ~/output
+mkdir -p /media/SDCard/output/
+mkdir -p /media/SDCard/output/2006/
+mkdir -p /media/SDCard/output/2006/all
+mkdir -p /media/SDCard/output/2006/all/ref
+mkdir -p ~/output/
+mkdir -p ~/output/2006/
+mkdir -p ~/output/2006/all/
+mkdir -p ~/output/2006/all/ref
 
 if [ -z "$workload_num" ]; then
     runscript="run.sh"
@@ -79,9 +86,13 @@ fi
 
 # busybox has a bug in time where escape characters (e.g. \n) are not
 # interpreted correctly, we have to put the CSV header in manually
-echo "name,RealTime,UserTime,KernelTime" >> ~/output/${full_name}.csv
-/usr/bin/time -a -o ~/output/${full_name}.csv -f "${full_name},%e,%U,%S" \
-    sh /media/SDCard/overlay/intspeed/ref/${runscript} > ~/output/${full_name}.out 1> ~/output/${full_name}.err
+echo "name,RealTime,UserTime,KernelTime" >> ~/output/2006/all/ref/${full_name}.csv
+/usr/bin/time -a -o ~/output/2006/all/ref/${full_name}.csv -f "${full_name},%e,%U,%S" \
+    sh /media/SDCard/overlay/all/ref/${runscript} > ~/output/2006/all/ref/${full_name}.out 1> ~/output/2006/all/ref/${full_name}.err
+
+cp ~/output/2006/all/ref/${full_name}.out /media/SDCard/output/2006/all/ref
+cp ~/output/2006/all/ref/${full_name}.err /media/SDCard/output/2006/all/ref
+cp ~/output/2006/all/ref/${full_name}.csv /media/SDCard/output/2006/all/ref
 
 if [ -z "$DISABLE_COUNTERS" -a "$counters" -ne 0 ]; then
     stop_counters

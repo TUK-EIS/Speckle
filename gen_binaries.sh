@@ -53,7 +53,7 @@ version=2006
 
 function usage
 {
-    echo "usage: gen_binaries.sh [--version[2006 | 2017]] [--compile | --genCommands] [-H | -h | --help] [--suite [intspeed | intrate | fpspeed | fprate] | --input [train | test | ref]]"
+    echo "usage: gen_binaries.sh [--version[2006 | 2017]] [--compile | --genCommands] [-H | -h | --help] [--suite [2006: int | fp | all] [2017: intspeed | intrate | fpspeed | fprate] | --input [train | test | ref]]"
 }
 
 while test $# -gt 0
@@ -122,13 +122,28 @@ CONFIGFILE=${CONFIG}${version}.cfg
 	fi
 
 #fi
+#Select Benchmarks
 
 if [[ $version == *"2006"* ]]; then
 	# the integer set
-	benchmarks=(400.perlbench 401.bzip2 403.gcc 429.mcf 445.gobmk 456.hmmer 458.sjeng 462.libquantum 464.h264ref 471.omnetpp 473.astar 483.xalancbmk)
+	if [[ $suite_type == *"all"* ]]; then 
+		benchmarks=$(basename -s .${input_type}.cmd --multiple $(pwd)/commands/*."${input_type}".cmd)
+	
+	elif [[ $suite_type == *"int"* ]]; then
+		benchmarks=(400.perlbench 401.bzip2 403.gcc 429.mcf 445.gobmk 456.hmmer 458.sjeng 462.libquantum 464.h264ref 471.omnetpp 473.astar 483.xalancbmk)
+	elif [[ $suite_type == *"fp"* ]]; then
+		benchmarks=(410.bwaves 416.gamess 433.milc 434.zeusmp 435.gromacs 436.cactusADM 437.leslie3d 444.namd 447.dealII 450.soplex 453.povray 454.calculix 459.GemsFDTD 465.tonto 470.lbm 481.wrf 482.sphinx3 ) 
+
+	fi
 else 
 	benchmarks=$(basename -s .${input_type}.cmd --multiple $(pwd)/commands/${suite_type}/*."${input_type}".cmd)
 fi
+echo "Benchmarks selected: "
+for b in ${benchmarks[@]}; do
+	echo "$b"
+done
+
+
 
 mkdir -p build;
 
@@ -151,105 +166,111 @@ if [ "$compileFlag" = true ]; then
    else 
 	   # copy over the config file we will use to compile the benchmarks
 	   cp $build_dir/../${CONFIGFILE} $SPEC_DIR/cpu$version/config/${CONFIGFILE}
-	   cd $SPEC_DIR/cpu$version; . ./shrc; time runspec --config ${CONFIGFILE} --size ${input_type} --action setup int > ${build_dir}/${CONFIG}-${version}-build.log
-		echo "SKIP"
-	fi
+	   if [[ $suite_type == *"all"* ]]; then 
+	  	cd $SPEC_DIR/cpu$version; . ./shrc; time runspec --config ${CONFIGFILE} --size ${input_type} --action setup fp > ${build_dir}/${CONFIG}-${version}-int-build.log
+	   	cd $SPEC_DIR/cpu$version; . ./shrc; time runspec --config ${CONFIGFILE} --size ${input_type} --action setup int > ${build_dir}/${CONFIG}-${version}-fp-build.log
+	   else
+		cd $SPEC_DIR/cpu$version; . ./shrc; time runspec --config ${CONFIGFILE} --size ${input_type} --action setup ${suite_type} > ${build_dir}/${CONFIG}-${version}-${suite_type}-build.log
+	   fi
+   fi
+fi
 
-   for b in ${benchmarks[@]}; do
-      output_dir=${overlay_dir}/${version}/${suite_type}/${input_type}/$b
-      mkdir -p $output_dir
-      if [[ $version == *"2017"* ]]; then 
-		bmark_base_dir=$SPEC_DIR/cpu${version}/benchspec/CPU/$b
+
+for b in ${benchmarks[@]}; do
+   output_dir=${overlay_dir}/${version}/${suite_type}/${input_type}/$b
+   mkdir -p $output_dir
+   if [[ $version == *"2017"* ]]; then 
+      bmark_base_dir=$SPEC_DIR/cpu${version}/benchspec/CPU/$b
+   else
+      bmark_base_dir=$SPEC_DIR/cpu${version}/benchspec/CPU2006/$b
+   fi
+   unprefixed=${b:4}
+   b_short_name=${unprefixed/%_[sr]/}
+
+
+   if [[ $version == *"2017"* ]]; then 
+      if [[ "${input_type}" == "ref" ]]; then
+         host_bmk_dir=${bmark_base_dir}/run/run_base_ref${class}_${H_CONFIG}-m64.0000;
       else
-		bmark_base_dir=$SPEC_DIR/cpu${version}/benchspec/CPU2006/$b
+         host_bmk_dir=${bmark_base_dir}/run/run_base_${input_type}_${H_CONFIG}-m64.0000;
       fi
-      unprefixed=${b:4}
-      b_short_name=${unprefixed/%_[sr]/}
-
-	  echo "$b"
-	
-	  if [[ $version == *"2017"* ]]; then 
-		  if [[ "${input_type}" == "ref" ]]; then
-			 host_bmk_dir=${bmark_base_dir}/run/run_base_ref${class}_${H_CONFIG}-m64.0000;
-		  else
-			 host_bmk_dir=${bmark_base_dir}/run/run_base_${input_type}_${H_CONFIG}-m64.0000;
-		  fi
-		  # Copy the inputs from the host build
-		  inputs=$(find "$host_bmk_dir"/* -maxdepth 0 ! -executable -o -type d)
-		  for input in ${inputs[@]}; do
-			 echo $input
-			 cp -rf $input -T $output_dir/$(basename "$input")
-			  
-		  done
-	  else 
-		  
-		  bmk_input_file_dir=${bmark_base_dir}/run/run_base_${input_type}_${CONFIG}.0000;
-		  # Copy the inputs from the host build
-		  echo "$bmk_input_file_dir"
-		  inputs=$(find "$bmk_input_file_dir"/* -maxdepth 0 ! -executable -o -type d)
-		  for input in ${inputs[@]}; do
-			 echo "INPUT"
-			 echo "$input"
-			 echo $(basename $input)
-			 echo "cp -rf $input -T $output_dir/$(basename "$input")"
-			 if [[ $(basename $input) == "xalanc.xsl" ]]; then
-				cp -rf /import/home/schmitz/spec/cpu2006/benchspec/CPU2006/483.xalancbmk/run/run_base_test_riscv.0000/xalanc.xsl -T /import/home/schmitz/Speckle/build/overlay/2006/intspeed/test/483.xalancbmk/xalanc.xsl
-			 else 
-				cp -rf $input -T $output_dir/$(basename $input)
-			 fi
-		  done
+      # Copy the inputs from the host build
+      inputs=$(find "$host_bmk_dir"/* -maxdepth 0 ! -executable -o -type d)
+      for input in ${inputs[@]}; do
+         cp -rf $input -T $output_dir/$(basename "$input")
+      done
+   else 
+      bmk_input_file_dir=${bmark_base_dir}/run/run_base_${input_type}_${CONFIG}.0000;
+      if [[ -d  $bmk_input_file_dir ]]; then 
+      # Copy the inputs from the run setup
+         echo "$bmk_input_file_dir"
+         inputs=$(find "$bmk_input_file_dir"/* -maxdepth 0) # ! -executable -o -type d)
+         for input in ${inputs[@]}; do
+            #Do not copy the binary
+            if [[ $(basename $input) == *".riscv"* ]]; then
+               echo "Skip binary"
+            else 			
+               cp -rf $input -T $output_dir/$(basename $input)
+            fi
+         done
+      else
+         echo "Warning: no input file directory found for $b"
       fi
+   fi
 
+   if [[ -d  $bmark_base_dir/exe ]]; then 
       if [[ $b == "523.xalancbmk_r" ]]; then
          target_bin=`find $bmark_base_dir/exe/ -name "cpuxalan*${CONFIG}-64"`
       elif [[ $b == "483.xalancbmk" ]]; then 
-		 target_bin=`find $bmark_base_dir/exe/ -name "Xalan*${CONFIG}"`
+         target_bin=`find $bmark_base_dir/exe/ -name "Xalan*${CONFIG}"`
+      elif [[ $b == "482.sphinx3" ]]; then 
+         target_bin=`find $bmark_base_dir/exe/ -name "sphinx_livepretend*${CONFIG}"`
       else
-		 if [[ $version == *"2017"* ]]; then 
-			target_bin=`find $bmark_base_dir/exe/ -name "*${b_short_name}*${CONFIG}-64"`
+         if [[ $version == *"2017"* ]]; then 
+            target_bin=`find $bmark_base_dir/exe/ -name "*${b_short_name}*${CONFIG}-64"`
          else
-			target_bin=`find $bmark_base_dir/exe/ -name "*${b_short_name}*${CONFIG}"`
+            target_bin=`find $bmark_base_dir/exe/ -name "*${b_short_name}*${CONFIG}"`
          fi
       fi
-      echo "cp -f ${target_bin} $output_dir/"
       cp -f ${target_bin} $output_dir/
+   else 
+      echo "Warning: no exe file directory found for $b"
+   fi
+   # Generate a run script
+   run_script=${output_dir}/run.sh
+   echo "#!/bin/bash" > ${run_script}
+   echo "#This script was generated by Speckle gen_binaries.sh" >> ${run_script}
 
-      # Generate a run script
-      run_script=${output_dir}/run.sh
-      echo "#!/bin/bash" > ${run_script}
-      echo "#This script was generated by Speckle gen_binaries.sh" >> ${run_script}
-
-	  if [[ $version == *"2017"* ]]; then 
-		IFS=$'\n' read -d '' -r -a commands < $build_dir/../commands/$suite_type/${b}.${input_type}.cmd || [ "${commands[0]}" ]
-      else 
-		IFS=$'\n' read -d '' -r -a commands < $build_dir/../commands/${b}.${input_type}.cmd || [ "${commands[0]}" ]
-      fi
-      workload_idx=0
-      for input in "${commands[@]}"; do
-         if [[ ${input:0:1} != '#' ]]; then # allow us to comment out lines in the cmd files
-            if [[ "$REDIRECT" = false ]]; then
-               input=${input% > *}
-            fi
-            workload_run_script=${output_dir}/run_workload${workload_idx}.sh
-            echo "#!/bin/bash" > ${workload_run_script}
-            message="echo 'Running: ./$(basename "${target_bin}") ${input}'"
-            cmd="./$(basename "${target_bin}") ${input}"
-            echo "$message" >> ${run_script}
-            echo "$message" >> ${workload_run_script}
-            echo "$cmd" >> ${run_script}
-            echo "$cmd" >> ${workload_run_script}
-            chmod +x $workload_run_script
-            workload_idx="$((workload_idx+1))"
+   if [[ $version == *"2017"* ]]; then 
+      IFS=$'\n' read -d '' -r -a commands < $build_dir/../commands/$suite_type/${b}.${input_type}.cmd || [ "${commands[0]}" ]
+   else 
+      IFS=$'\n' read -d '' -r -a commands < $build_dir/../commands/${b}.${input_type}.cmd || [ "${commands[0]}" ]
+   fi
+   workload_idx=0
+   for input in "${commands[@]}"; do
+      if [[ ${input:0:1} != '#' ]]; then # allow us to comment out lines in the cmd files
+         if [[ "$REDIRECT" = false ]]; then
+            input=${input% > *}
          fi
-      done
-      chmod +x $run_script
+         workload_run_script=${output_dir}/run_workload${workload_idx}.sh
+         echo "#!/bin/bash" > ${workload_run_script}
+         message="echo 'Running: ./$(basename "${target_bin}") ${input}'"
+         cmd="./$(basename "${target_bin}") ${input}"
+         echo "$message" >> ${run_script}
+         echo "$message" >> ${workload_run_script}
+         echo "$cmd" >> ${run_script}
+         echo "$cmd" >> ${workload_run_script}
+         chmod +x $workload_run_script
+         workload_idx="$((workload_idx+1))"
+      fi
    done
-   #if [[ $version == *"2017"* ]]; then 
-   # Copy the master runscript into the overlay directory
-		cp ${build_dir}/../spec${version}-run-scripts/${suite_type}_${input_type}.sh ${overlay_dir}/${version}/${suite_type}/${input_type}
-		cp ${build_dir}/../spec${version}-run-scripts/run_all_${suite_type}_${input_type}.sh ${overlay_dir}//${version}/${suite_type}/${input_type}
-   #fi
-fi
+   chmod +x $run_script
+done
+
+# Copy the master runscript into the overlay directory
+cp ${build_dir}/../spec${version}-run-scripts/${suite_type}_${input_type}.sh ${overlay_dir}/${version}/${suite_type}/${input_type}
+cp ${build_dir}/../spec${version}-run-scripts/run_all_${suite_type}_${input_type}.sh ${overlay_dir}/${version}/${suite_type}/${input_type}
+
 
 # Produces the .cmd files for a benchmark suite
 # These files are committed, but can be regenereated with this command
